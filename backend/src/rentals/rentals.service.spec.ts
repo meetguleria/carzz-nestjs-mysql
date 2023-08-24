@@ -51,7 +51,7 @@ describe('RentalsService', () => {
 
     it('should get a rental by id', async () => {
         const expectedResult = { ...rental, rentalId: 1 };
-        mockQuery.mockResolvedValueOnce([expectedResult]);
+        mockQuery.mockResolvedValueOnce([[expectedResult]]);
     
         const result = await service.getRentalById(1);
         expect(result).toEqual(expectedResult);    

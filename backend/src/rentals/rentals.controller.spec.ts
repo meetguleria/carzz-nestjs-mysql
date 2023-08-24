@@ -25,7 +25,7 @@ describe('RentalsController', () => {
             getRentalById: jest.fn().mockResolvedValue(mockRental),
             addRental: jest.fn().mockResolvedValue(mockAddResult),
             updateRental: jest.fn().mockResolvedValue({ affectedRows: 1 }),
-            deleteRental: jest.fn().mockResolvedValue({ affectedRows: 1 }),
+            cancelRental: jest.fn().mockResolvedValue({ affectedRows: 1 }),
         } as any;
 
         const module: TestingModule = await Test.createTestingModule({

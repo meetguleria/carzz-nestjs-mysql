@@ -55,7 +55,8 @@ describe('CustomersController', () => {
 
     describe('addCustomer', () => {
         it('should add a customer', async () => {
-            expect(await controller.addCustomer(mockCustomer)).toEqual(mockCustomer)
+            const expectedResult = { insertId: 1 };
+            expect(await controller.addCustomer(mockCustomer)).toEqual(expectedResult)
         });
     });
 

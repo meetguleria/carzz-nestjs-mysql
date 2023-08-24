@@ -50,7 +50,7 @@ describe('ReviewsController', () => {
 
     describe('getReviewById', () => {
         it('should get a review by ID', async () => {
-            expect(await controller.getReviewById(1)).toEqual([mockReview]);
+            expect(await controller.getReviewById(1)).toEqual(mockReview);
         })
     })
 

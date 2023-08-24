@@ -47,12 +47,28 @@ describe('CustomersService', () => {
         expect(result).toEqual(expectedResult);
     });
 
+    it('should get a customer by ID', async () => {
+        const expectedResult = { ...customer, customerId: 1 };
+        mockQuery.mockResolvedValueOnce([[expectedResult]]);
+
+        const result = await service.getCustomerById(1);
+        expect(result).toEqual(expectedResult);
+    });
+
     it('should update a customer', async () => {
         const customerId = 1; 
         const expectedResult = { affectedRows: 1 };
         mockQuery.mockReturnValueOnce([expectedResult]);
     
         const result = await service.updateCustomer(customerId, customer);
+        expect(result).toEqual(expectedResult);
+    });
+
+    it('should delete a customer', async () => {
+        const expectedResult = { affectedRows: 1 };
+        mockQuery.mockResolvedValueOnce([expectedResult]);
+
+        const result = await service.deleteCustomer(1);
         expect(result).toEqual(expectedResult);
     });
 });
